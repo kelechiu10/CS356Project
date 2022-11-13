@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Data Files
+Processed Traffic Data for ML Algorithms-20221113T115344Z-002.zip
+Processed Traffic Data for ML Algorithms-20221113T115344Z-003.zip
+Processed Traffic Data for ML Algorithms/
