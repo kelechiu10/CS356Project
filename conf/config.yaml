@@ -1,0 +1,7 @@
+test: False
+model: "random-forest"
+filename: "processed_data.csv"
+saved_model: "rf-all-data.pkl"
+
+logging:
+  dir: "./logs"

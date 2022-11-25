@@ -11,9 +11,9 @@ def process(df_dataset, filename):
         'Bwd PSH Flags',
         'Fwd URG Flags',
         'Bwd URG Flags',
-        'Flow Byts/s',  # This field had np.inf values during training, as such was removed
-        'Flow Pkts/s',  # This field had np.inf values during training, as such was removed
-        'Dst IP',   #These fields are only in some but not others
+        'Flow Byts/s',  # some np.inf values
+        'Flow Pkts/s',  # some np.inf values
+        'Dst IP',   #These fields are in some days but not others
         'Flow ID',
         'Src IP',
         'Src Port'
@@ -49,7 +49,7 @@ def process(df_dataset, filename):
 
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     # code for over all days, can add options to split by specific days
     joined_files = os.path.join("Processed Traffic Data for ML Algorithms", "*.csv")
     joined_list = glob.glob(joined_files)
