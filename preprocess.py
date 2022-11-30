@@ -2,6 +2,7 @@ import pandas as pd
 import glob
 import os
 import numpy as np
+import argparse
 
 def process(df_dataset, filename):
     columns_to_drop = [
@@ -50,8 +51,13 @@ def process(df_dataset, filename):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-d', '--data', default="Processed Traffic Data for ML Algorithms")
+    args = parser.parse_args()
+
     # code for over all days, can add options to split by specific days
-    joined_files = os.path.join("Processed Traffic Data for ML Algorithms", "*.csv")
+    #joined_files = os.path.join(args.data, "*.csv")
+    joined_files = os.path.join("args.data", "*.csv")
     joined_list = glob.glob(joined_files)
     all_df = pd.concat(map(pd.read_csv, joined_list), ignore_index=True)
     process(all_df, 'processed_data.csv')
