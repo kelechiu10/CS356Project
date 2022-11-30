@@ -2,7 +2,7 @@ import utils
 from omegaconf import DictConfig
 import hydra
 import pandas as pd
-from models import decision_tree, random_forest
+from models import decision_tree, random_forest, knn
 
 @hydra.main(version_base=None, config_path="conf", config_name="config")
 def main(cfg : DictConfig) -> None:
@@ -13,6 +13,9 @@ def main(cfg : DictConfig) -> None:
     elif cfg.model == 'random-forest':
         print('running random forest...')
         model_func = random_forest.RandomForest()
+    elif cfg.model == 'knn':
+        print('running knn...')
+        model_func = knn.KNN()
     else:
         raise NotImplementedError()
 
