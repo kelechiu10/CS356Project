@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
     # code for over all days, can add options to split by specific days
     #joined_files = os.path.join(args.data, "*.csv")
-    joined_files = os.path.join("/home/cody/cs356/repo/data/processed", "*.csv")
+    joined_files = os.path.join("args.data", "*.csv")
     joined_list = glob.glob(joined_files)
     all_df = pd.concat(map(pd.read_csv, joined_list), ignore_index=True)
     process(all_df, 'processed_data.csv')
