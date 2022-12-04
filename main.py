@@ -2,7 +2,7 @@ import utils
 from omegaconf import DictConfig
 import hydra
 import pandas as pd
-from models import decision_tree, random_forest, knn, svm
+from models import decision_tree, random_forest, knn, svm, ada
 
 @hydra.main(version_base=None, config_path="conf", config_name="config")
 def main(cfg : DictConfig) -> None:
@@ -22,6 +22,9 @@ def main(cfg : DictConfig) -> None:
     elif cfg.model == 'linear_svm':
         print('running Linear SVM..')
         model_func = svm.LinearSVM()
+    elif cfg.model == 'ada':
+        print('running ada...')
+        model_func = ada.Ada()
     else:
         raise NotImplementedError(f'{cfg.model} not added')
 
