@@ -137,3 +137,4 @@ Processed Traffic Data for ML Algorithms-20221113T115344Z-003.zip
 Processed Traffic Data for ML Algorithms/
 *.csv
 *.h5
+outputs/
