@@ -2,7 +2,7 @@ import utils
 from omegaconf import DictConfig
 import hydra
 import pandas as pd
-from models import decision_tree, random_forest, knn
+from models import decision_tree, random_forest, knn, svm
 
 @hydra.main(version_base=None, config_path="conf", config_name="config")
 def main(cfg : DictConfig) -> None:
@@ -16,6 +16,9 @@ def main(cfg : DictConfig) -> None:
     elif cfg.model == 'knn':
         print('running knn...')
         model_func = knn.KNN()
+    elif cfg.model == 'svm':
+        print('running SVM..')
+        model_func = svm.SVM()
     else:
         raise NotImplementedError()
 

@@ -1,7 +1,7 @@
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import GridSearchCV
-from base_model import BaseModel
+from models.base_model import BaseModel
 class DecisionTree(BaseModel):
     def train(self, data):
         X_train = data['X_train']
