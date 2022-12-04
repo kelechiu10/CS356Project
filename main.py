@@ -19,8 +19,11 @@ def main(cfg : DictConfig) -> None:
     elif cfg.model == 'svm':
         print('running SVM..')
         model_func = svm.SVM()
+    elif cfg.model == 'linear_svm':
+        print('running Linear SVM..')
+        model_func = svm.LinearSVM()
     else:
-        raise NotImplementedError()
+        raise NotImplementedError(f'{cfg.model} not added')
 
     df_dataset = pd.read_csv(cfg.filename)
     data = utils.process_data(df_dataset, split=(not cfg.test))
