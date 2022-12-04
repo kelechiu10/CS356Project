@@ -2,7 +2,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.utils import class_weight
 import numpy as np
 from sklearn.model_selection import GridSearchCV
-from .base_model import BaseModel
+from base_model import BaseModel
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 class RandomForest(BaseModel):
