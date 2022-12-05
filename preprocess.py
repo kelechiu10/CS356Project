@@ -53,11 +53,23 @@ def process(df_dataset, filename):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--data', default="Processed Traffic Data for ML Algorithms")
+    parser.add_argument('-s', '--specific', default='all')
+    parser.add_argument('-o', '--out', default=None)
     args = parser.parse_args()
 
     # code for over all days, can add options to split by specific days
     #joined_files = os.path.join(args.data, "*.csv")
-    joined_files = os.path.join("args.data", "*.csv")
+    part = "*.csv"
+    if args.specific != 'all':
+        part = args.specific
+    joined_files = os.path.join(args.data, part + "*")
     joined_list = glob.glob(joined_files)
+    print('Files used:')
+    print(joined_list)
+    if args.out == None:
+        out = part + ".csv"
+    else:
+        out = args.out
+    print(f'Will output to: {out}')
     all_df = pd.concat(map(pd.read_csv, joined_list), ignore_index=True)
     process(all_df, 'processed_data.csv')
