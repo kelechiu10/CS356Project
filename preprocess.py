@@ -72,4 +72,4 @@ if __name__ == '__main__':
         out = args.out
     print(f'Will output to: {out}')
     all_df = pd.concat(map(pd.read_csv, joined_list), ignore_index=True)
-    process(all_df, 'processed_data.csv')
+    process(all_df, out)
