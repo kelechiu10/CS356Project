@@ -2,7 +2,7 @@ import utils
 from omegaconf import DictConfig
 import hydra
 import pandas as pd
-from models import decision_tree, random_forest, knn, svm, ada
+from models import decision_tree, random_forest, knn, svm, ada, logistic_regression
 
 @hydra.main(version_base=None, config_path="conf", config_name="config")
 def main(cfg : DictConfig) -> None:
@@ -25,6 +25,9 @@ def main(cfg : DictConfig) -> None:
     elif cfg.model == 'ada':
         print('running ada...')
         model_func = ada.Ada()
+    elif cfg.model == 'logistic-regression':
+        print('running logistic regression...')
+        model_func = logistic_regression.LogisticRegression()
     else:
         raise NotImplementedError(f'{cfg.model} not added')
 
