@@ -1,0 +1,71 @@
+Linear SVM:
+accuracy: 0.05275392174602954
+[[    0     0]
+ [68053  3790]]
+              precision    recall  f1-score   support
+
+           0    0.00000   0.00000   0.00000         0
+           1    1.00000   0.05275   0.10022     71843
+
+    accuracy                        0.05275     71843
+   macro avg    0.50000   0.02638   0.05011     71843
+weighted avg    1.00000   0.05275   0.10022     71843
+
+----------------
+KNN:
+
+accuracy: 0.0
+[[    0     0]
+ [71843     0]]
+/Users/kuhegbu/Classes/CS356/CS356Project/.venv/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/Users/kuhegbu/Classes/CS356/CS356Project/.venv/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/Users/kuhegbu/Classes/CS356/CS356Project/.venv/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/Users/kuhegbu/Classes/CS356/CS356Project/.venv/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/Users/kuhegbu/Classes/CS356/CS356Project/.venv/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/Users/kuhegbu/Classes/CS356/CS356Project/.venv/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1334: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score   support
+
+           0    0.00000   0.00000   0.00000       0.0
+           1    0.00000   0.00000   0.00000   71843.0
+
+    accuracy                        0.00000   71843.0
+   macro avg    0.00000   0.00000   0.00000   71843.0
+weighted avg    0.00000   0.00000   0.00000   71843.0
+
+
+----------------------
+Decision Tree:
+
+accuracy: 0.22393274222958395
+[[    0     0]
+ [55755 16088]]
+
+              precision    recall  f1-score   support
+
+           0    0.00000   0.00000   0.00000         0
+           1    1.00000   0.22393   0.36592     71843
+
+    accuracy                        0.22393     71843
+   macro avg    0.50000   0.11197   0.18296     71843
+weighted avg    1.00000   0.22393   0.36592     71843
+
+--------
+ADA:
+
+accuracy: 0.1430619545397603
+[[    0     0]
+ [61565 10278]]
+              precision    recall  f1-score   support
+
+           0    0.00000   0.00000   0.00000         0
+           1    1.00000   0.14306   0.25031     71843
+
+    accuracy                        0.14306     71843
+   macro avg    0.50000   0.07153   0.12516     71843
+weighted avg    1.00000   0.14306   0.25031     71843
