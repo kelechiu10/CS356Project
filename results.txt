@@ -1,0 +1,72 @@
+ precision    recall  f1-score   support
+
+           0    0.99977   0.99985   0.99981    571060
+           1    0.99901   0.99849   0.99875     86815
+
+    accuracy                        0.99967    657875
+   macro avg    0.99939   0.99917   0.99928    657875
+weighted avg    0.99967   0.99967   0.99967    657875
+
+['trained_models/friday-decision-tree-classifier.pkl']
+
+-----
+
+accuracy: 0.9995713471404142
+[[570998     62]
+ [   220  86595]]
+              precision    recall  f1-score   support
+
+           0    0.99961   0.99989   0.99975    571060
+           1    0.99928   0.99747   0.99837     86815
+
+    accuracy                        0.99957    657875
+   macro avg    0.99945   0.99868   0.99906    657875
+weighted avg    0.99957   0.99957   0.99957    657875
+
+Saved model to trained_models/knn-friday.pkl
+
+
+-----------------
+Linear SVM:
+
+Accuracy score on Validation set:
+
+0.9953603784659543
+starting test
+accuracy: 0.9953851415542466
+[[568563   2497]
+ [   539  86276]]
+              precision    recall  f1-score   support
+
+           0    0.99905   0.99563   0.99734    571060
+           1    0.97187   0.99379   0.98271     86815
+
+    accuracy                        0.99539    657875
+   macro avg    0.98546   0.99471   0.99002    657875
+weighted avg    0.99547   0.99539   0.99541    657875
+
+Saved model to trained_models/linsvm-friday.pkl
+
+
+----------------
+
+0.9993700486091252
+---------------
+Best performing hyperparameters on Validation set:
+{'learning_rate': 1, 'n_estimators': 150}
+---------------
+AdaBoostClassifier(learning_rate=1, n_estimators=150, random_state=0)
+starting test
+accuracy: 0.9993357400722022
+[[571019     41]
+ [   396  86419]]
+              precision    recall  f1-score   support
+
+           0    0.99931   0.99993   0.99962    571060
+           1    0.99953   0.99544   0.99748     86815
+
+    accuracy                        0.99934    657875
+   macro avg    0.99942   0.99768   0.99855    657875
+weighted avg    0.99934   0.99934   0.99934    657875
+
+Saved model to trained_models/ada-friday.pkl
