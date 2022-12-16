@@ -1,11 +1,11 @@
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from sklearn.svm import SVC, LinearSVC
+from sklearn.svm import SVC, LinearSVC, NuSVC
 from models.base_model import BaseModel
 class SVM(BaseModel):
     def train(self, data):
         X_train = data['X_train']
         y_train = data['y_train']
-        clf = SVC(gamma='auto')
+        clf = NuSVC(gamma='auto')
         clf.fit(X=X_train, y=y_train)
 
         print("Accuracy score on Validation set: \n")

@@ -1,7 +1,8 @@
 test: False
 model: "random-forest"
-filename: "processed_data.csv"
+filename: "friday_data.csv"
 saved_model: "rf-all-data.pkl"
+gpu: True
 
 logging:
   dir: "./logs"

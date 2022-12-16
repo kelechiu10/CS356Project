@@ -2,7 +2,8 @@ import utils
 from omegaconf import DictConfig
 import hydra
 import pandas as pd
-from models import decision_tree, random_forest, knn, svm, ada, logistic_regression
+from models import decision_tree, random_forest, knn, svm, ada, logistic_regression, xgb
+from xgboost import XGBClassifier
 
 @hydra.main(version_base=None, config_path="conf", config_name="config")
 def main(cfg : DictConfig) -> None:
@@ -28,6 +29,9 @@ def main(cfg : DictConfig) -> None:
     elif cfg.model == 'logistic-regression':
         print('running logistic regression...')
         model_func = logistic_regression.LogisticRegression()
+    elif cfg.model == 'xgboost':
+        print('running xgboost...')
+        model_func = xgb.XGBoost(gpu=cfg.gpu)
     else:
         raise NotImplementedError(f'{cfg.model} not added')
 
@@ -36,7 +40,11 @@ def main(cfg : DictConfig) -> None:
     print('data has been read in.')
     if(cfg.test):
         print('testing...')
-        model = utils.load(cfg.saved_model)
+        if cfg.model == 'xgboost':
+            model = XGBClassifier()
+            model.load_model(cfg.saved_model)
+        else:
+            model = utils.load(cfg.saved_model)
         # assume whole dataset is used just for test
         model_func.test(model, data)
 
@@ -47,6 +55,8 @@ def main(cfg : DictConfig) -> None:
         model_func.test(model, data)
         print(f'Saved model to trained_models/{cfg.saved_model}')
         utils.save(model, f'trained_models/{cfg.saved_model}')
+        if cfg.model == 'xgboost':
+            model.save_model(f'trained_models/{cfg.saved_model}.json')
 
 if __name__ == '__main__':
     main()
